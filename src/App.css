@@ -40,6 +40,44 @@
 }
 
 
+.search-container {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
+}
+
+.search-input {
+  width: 250px;
+  padding: 8px 12px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #00b894;
+  outline: none;
+}
+
+.search-btn {
+  padding: 8px 16px;
+  background-color: #00b894;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #019875;
+}
+
+
+
 /* Body CSS */
 
 .restaurant-list{

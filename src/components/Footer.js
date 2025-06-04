@@ -5,11 +5,11 @@ const Footer = () => {
     return (
       <div className="footer">
         Created By
-        <i class="fa-solid fa-heart"></i>
+        <i className="fa-solid fa-heart"></i>
         <a href="https://github.com/roshan194" target="_blank">
           Roshan
         </a>
-        <i class="fa-solid fa-copyright"></i>
+        <i className="fa-solid fa-copyright"></i>
         {year}
         <strong>
           FOOD<span>APP</span>

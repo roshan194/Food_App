@@ -1,18 +1,19 @@
-import {restaurantList} from "../Utils/config";
+
 import RestaurantCard  from "./RestaurantCard"
 
-const Body = () => {
-    return (
-      <div className="restaurant-list">
-        {restaurantList.map((restaurant) => (
+const Body = ({ restaurants }) => {
+  return (
+    <div className="restaurant-list">
+      {restaurants?.length > 0 &&
+        restaurants.map((restaurant) => (
           <RestaurantCard
             key={restaurant.info.id}
             {...restaurant.info}
             lastMileTravelString={restaurant.info.sla.lastMileTravelString}
           />
         ))}
-      </div>
-    );
-  };
+    </div>
+  );
+};
 
   export default Body;
