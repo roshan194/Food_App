@@ -1,4 +1,5 @@
 import foodFireLogo from "../food_logo.avif"
+import { useState } from "react";
 
 const Title = () => (
     <a href="/">
@@ -7,6 +8,8 @@ const Title = () => (
   );
   
   const Header = ({searchText, setSearchText, onSearch}) => {
+
+    const [isLoggedin, setIsLoggedin] = useState(false);
     return (
       <>
       <div className="header">
@@ -28,6 +31,22 @@ const Title = () => (
             <li>Home</li>
             <li>About</li>
             <li>Contact</li>
+            <li>
+            <i className="fa-solid fa-cart-shopping"></i>
+          </li>
+          <li>
+            {isLoggedin ? (
+              <button
+              className="logout-btn"
+              onClick={() => setIsLoggedin(false)}>
+              Logout</button>
+            ) : (
+              <button
+              className="login-btn"
+              onClick={() => setIsLoggedin(true)}>
+              Login</button>
+            )}
+          </li>
           </ul>
         </div>
       </div>
