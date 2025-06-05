@@ -1,10 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
-import { restaurantList } from "./Utils/config";
 import css from "./App.css";
 
 
@@ -13,14 +12,26 @@ import css from "./App.css";
 
 const AppLayout = () => {
   const [searchText, setSearchText] = useState("");
-  const [restaurants, setRestaurants] = useState(restaurantList);
+  const [restaurants, setRestaurants] = useState([]);
+
+
+  useEffect(()=> {
+    getRestaurants();
+  },[]);
+
+  async function getRestaurants(){
+    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    const json = await data.json();
+    console.log(json);
+    setRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  }
 
   function filterData() {
     if (searchText.trim() === "") {
       // If search is empty, reset to original full list
-      setRestaurants(restaurantList);
+      setRestaurants(restaurants);
     } else {
-      const data = restaurantList.filter((restaurant) =>
+      const data = restaurants.filter((restaurant) =>
         restaurant?.info?.name.toLowerCase().includes(searchText.toLowerCase())
       );
       setRestaurants(data);
