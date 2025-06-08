@@ -8,7 +8,7 @@ import {
   RESTAURANT_TYPE_KEY,
 } from "../Utils/config"; // Adjust path based on your file structure
 import ShimmerCard from "./ShimmerCard"; // Your shimmer loader
-
+import '@fortawesome/fontawesome-free/css/all.min.css';
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const [restaurant, setRestaurant] = useState(null);

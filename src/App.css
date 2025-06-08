@@ -259,7 +259,8 @@ a {
   align-items: center;
   padding: 5px 8px;
   gap: 5px;
-  background-color: var(--dark-green);
+  background-color: rgb(19, 176, 1);
+
   border-radius: 5px;
 }
 
