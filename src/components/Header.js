@@ -1,6 +1,7 @@
 import foodFireLogo from "../food_logo.avif"
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Title = () => (
     <a href="/">
@@ -11,6 +12,7 @@ const Title = () => (
   const Header = ({searchText, setSearchText, onSearch}) => {
 
     const [isLoggedin, setIsLoggedin] = useState(false);
+    const navigate = useNavigate();
     return (
       <>
       <div className="header">
@@ -44,7 +46,7 @@ const Title = () => (
             ) : (
               <button
               className="login-btn"
-              onClick={() => setIsLoggedin(true)}>
+              onClick={() => navigate("/login")}>
               Login</button>
             )}
           </li>
