@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { RestaurantContext } from "./RestaurantContext";
+import { Link } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 import ShimmerCard from "./ShimmerCard";
 
@@ -13,11 +14,13 @@ const Body = () => {
       {isLoading
         ? Array(10).fill(0).map((_, index) => <ShimmerCard key={index} />)
         : filteredRestaurants.map((restaurant) => (
-            <RestaurantCard
+          <Link to={"/restaurant/" + restaurant?.info.id}>
+          <RestaurantCard
               key={restaurant.info.id}
               {...restaurant.info}
               lastMileTravelString={restaurant.info.sla.lastMileTravelString}
             />
+          </Link>
           ))}
     </div>
   );

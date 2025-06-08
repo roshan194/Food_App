@@ -46,6 +46,8 @@ export const RestaurantProvider = ({ children }) => {
     }
   };
 
+  if (!allRestaurants) return null;
+
   return (
     <RestaurantContext.Provider
       value={{

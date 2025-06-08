@@ -1,6 +1,5 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
-const IMG_CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+import { IMG_CDN_URL } from '../Utils/config';
 
 
 const RestaurantCard = ({

@@ -1,5 +1,6 @@
 import foodFireLogo from "../food_logo.avif"
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Title = () => (
     <a href="/">
@@ -28,9 +29,9 @@ const Title = () => (
       </div>
         <div className="nav-items">
           <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="./about">About</Link></li>
+            <li><Link to="./contact">Contact</Link></li>
             <li>
             <i className="fa-solid fa-cart-shopping"></i>
           </li>
