@@ -133,7 +133,6 @@ a {
 
 .card{
   width: 200px;
-  height: 300px;
   border-radius: 5px;
   box-shadow: -1px 4px 20px 14px rgba(0, 0, 0, 0.2);
   padding: 10px;
@@ -201,6 +200,15 @@ a {
   font-size: 12px;
   margin-right: 4px;
 }
+
+
+.truncate-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block; /* or inline-block if used in span */
+}
+
 
 
 
