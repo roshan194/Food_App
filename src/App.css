@@ -589,3 +589,46 @@ a {
 .footer > strong > span{
   color: rgb(203, 54, 0)
 }
+
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-items ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .restaurant-summary {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+  }
+
+  .restaurant-details {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .menu-item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-item-img {
+    width: 90%;
+    height: auto;
+  }
+
+  .search-container {
+    padding: 12px;
+  }
+
+  .login-container {
+    margin: 40px auto;
+    width: 90%;
+  }
+}
